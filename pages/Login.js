@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {View, Button, Text, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView, TextInput} from 'react-native'
 
-export default function Login(){
+export default function Login(props){
 
 
 
