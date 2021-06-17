@@ -4,55 +4,57 @@ import { Button, StyleSheet, Text, View, SafeAreaView,TouchableOpacity, Image, P
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
 import Home from './pages/Home';
-import DemoState from './pages/DemoState';
-import LoremPicsum from './pages/LoremPicsum';
 import Login from './pages/Login';
-import AppCamera from './pages/AppCamera';
 import Header from './components/Header';
 
 export default function App() {
 
   const [page, navigate] = useState('Home');
-  const [hasPermission, setHasPermission] = useState(null);
-  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await BarCodeScanner.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
-    })();
-  }, []);
+
 
 
   /* Ajout de variables avant le return */
   const items = [
+
+   // while fetch reponse {
+      // echo titre
+      //contenu
+      // etc}
     { id: 1,
       title: 'Canette soda test',
+      contenu:"blabla" ,
       date: 'Demain à 00:00'
     },
     { id: 2,
       title: 'Canette soda test 2',
+      contenu:"blabla" ,
       date: 'Demain à 00:00'
     },
     { id: 3,
       title: 'Cookies du crous ',
+      contenu:"blabla" ,
       date: 'Demain à 00:00'
     },
     { id: 4,
       title: 'Pizza',
+      contenu:"blabla" ,
       date: 'Demain à 00:00'
     },
     { id: 5,
       title: 'Bière',
+      contenu:"blabla" ,
+      date: 'Demain à 00:00'
+    },
+    { id: 6,
+      title: 'Bière',
+      contenu:"blabla" ,
       date: 'Demain à 00:00'
     },
   ]
 
 
-  function onScanPress(){
-    /* TOOD: Ouvrir une page pour l'appareil photo */
-    navigate('Camera');
-  }
+
 
   async function onBarCodeScan({data, type}){
     await getProductInfoFromApi(data);
@@ -85,41 +87,31 @@ export default function App() {
     <SafeAreaView style={styles.container}>
         <StatusBar style="auto" />
         {/* Header */}
-        <Header title={page}/>
-
-        {/* TODO: Ajouter navigation */}
-        {page === 'Home' && <Home appScan={onScanPress} appItems={items}/>}
-        {page === 'Camera' && <AppCamera handleBarCodeScanned={onBarCodeScan}/>}
-{/*         {page === 'DemoState' &&  <DemoState/>}
-        {page === 'LoremPicsum' &&  <LoremPicsum/>} */}
-        {page === 'Login' &&  <Login login={() => {alert('Je suis connecté !'); navigate('Home')}}/>}
-      
-
-        <View style={styles.topMenu}>
-          <Button 
-            title="Home" 
+        <Header title={'The Holy BF'}/>
+      <View>
+        <Button
+            title="Blog"
             color={page === "Home" ? "green" : 'grey'}
             onPress={() => navigate('Home')}
-            />
-          {/* <Button 
-            title="State" 
-            color={page === "DemoState" ? "green" : 'grey'}
-            onPress={() => navigate('DemoState')}
-            />
+        />
+      </View>
+        {/* TODO: Ajouter navigation */}
+        {page === 'Home' && <Home  appItems={items}/>
 
-          <Button 
-            title="Picsum" 
-            color={page === "LoremPicsum" ? 'green' : 'grey'}
-            onPress={() => navigate('LoremPicsum')}
-            /> */}
+        }
 
-          <Button 
-            title="Login" 
-            color={page === "Login" ? 'green' : 'grey'}
+        {page === 'Article' &&  <Login login={() => {alert('Je suis connecté !'); navigate('Home')}}/>}
+
+
+
+      <View style={styles.topMenu}>
+
+        <Button
+            title="En savoir plus "
+            color={page === "Article" ? 'green' : 'grey'}
             onPress={() => navigate('Login')}
-            />
-        </View>
-
+        />
+      </View>
     </SafeAreaView>
   );
 }

@@ -1,9 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, View, Image} from 'react-native'
 
 export default function Header({title}){
     return (
         <View style={styles.header}>
+            <Image
+                style={styles.Logo}
+                source={require('../assets/logo.png')}/>
             <Text style={styles.headerText}>{title}</Text>
         </View>
     )
@@ -11,14 +14,29 @@ export default function Header({title}){
 
 const styles = StyleSheet.create({
     header: {
-        height: 60,
-        backgroundColor: 'grey',
+        height: 150,
+        backgroundColor: '#678fc0' ,
+        flexDirection:'row',
         alignItems: 'center',
-        justifyContent: 'center'
-      },
+
+
+},
       headerText: {
         color: 'white',
         fontSize: 20,
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          alignItems: 'center',
+          marginLeft: 30,
+          fontFamily: 'Megrim',
+
+
+
+      },
+      Logo:{
+        height: 75,
+          width:75,
+          marginLeft: 20,
+
       }
+
 })

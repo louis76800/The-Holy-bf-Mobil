@@ -6,6 +6,7 @@ export default function ProductItem(props){
     return (
         <View key={props.data.id} style={styles.articleContainer}>
             <Text style={sText.articleTitle}>{props.data.title}</Text>
+            <Text style={sText.articleTitle}>{props.data.contenu}</Text>
             <Text style={sText.articleDesc}>{props.data.date}</Text>
         </View> 
     )
