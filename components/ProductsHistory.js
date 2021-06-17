@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, ScrollView, View, Button, SafeAreaView} from 'react-native'
+import {ScrollView, View, Button} from 'react-native'
 import ProductItem from './ProductItem';
-import Login from '../pages/Login';
+import Article from '../pages/Login';
 
 
 
 
 export default function ProductHistory(props){
-    const [page, navigate] = useState('login');
+    const [page, navigate] = useState('Article');
 
     return (
       <ScrollView>
@@ -18,11 +18,12 @@ export default function ProductHistory(props){
             <View >
                 <ProductItem data={el}/>
 
-                <Button
-                    title="En savoir plus "
-                    color={'grey'}
-                    onPress={() => navigate('Login')}
-                />
+                    <Button
+                        title="En savoir plus "
+                        color={page === "Article" ? 'green' : 'grey'}
+                        onPress={() => navigate('Article')}
+                    />
+
             </View>
           )
         })

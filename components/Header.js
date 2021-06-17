@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
           fontWeight: 'bold',
           alignItems: 'center',
           marginLeft: 30,
-          fontFamily: 'Megrim',
 
 
 

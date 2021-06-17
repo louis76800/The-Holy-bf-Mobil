@@ -1,7 +1,5 @@
 import React from 'react';
 import {View} from 'react-native'
-import Header from '../components/Header';
-import ScanButtonView from '../components/ScanButtonView';
 import ProductsHistory from '../components/ProductsHistory';
 
 

@@ -1,18 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, View, SafeAreaView,TouchableOpacity, Image, Pressable, ScrollView } from 'react-native';
-import { BarCodeScanner } from 'expo-barcode-scanner';
-
 import Home from './pages/Home';
-import Login from './pages/Login';
+import Article from './pages/Login';
 import Header from './components/Header';
 
 export default function App() {
 
   const [page, navigate] = useState('Home');
-
-
-
 
   /* Ajout de variables avant le return */
   const items = [
@@ -100,7 +95,7 @@ export default function App() {
 
         }
 
-        {page === 'Article' &&  <Login login={() => {alert('Je suis connecté !'); navigate('Home')}}/>}
+        {page === 'Article' &&  <Article login={() => {alert('Je suis connecté !'); navigate('Home')}}/>}
 
 
 
@@ -109,7 +104,7 @@ export default function App() {
         <Button
             title="En savoir plus "
             color={page === "Article" ? 'green' : 'grey'}
-            onPress={() => navigate('Login')}
+            onPress={() => navigate('Article')}
         />
       </View>
     </SafeAreaView>
