@@ -10,6 +10,10 @@ export default function App() {
 
   const [page, navigate] = useState('Home');
 
+  const [article, setArticle] = useState([]);
+  useEffect(()=>{
+    getProductInfoFromApi()
+  },[])
   /* Ajout de variables avant le return */
   const items = [
 
@@ -60,14 +64,14 @@ export default function App() {
       //this.setState({loading : true});
 
       let response = await fetch(
-        'https://fr.openfoodfacts.org/api/v0/produit/' + barCode + '.json'
+        'http://10.176.130.183:8080/apiv1/articles'
       );
       let responseJson = await response.json();
+      console.log(responseJson);
 
       // Travailler avec les données 
-      let _products = products;
-      _products.push(responseJson);
-      setProducts(_products);
+
+      setArticle(responseJson);
 
     } catch (error) {
       console.error(error);
