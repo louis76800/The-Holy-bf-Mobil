@@ -7,11 +7,11 @@ import Article from '../pages/Login';
 
 
 export default function ProductHistory(props){
-    const [page, navigate] = useState('Article');
 
     return (
       <ScrollView>
       {
+
 
         props.propsItem.map(el => {
           return (
@@ -20,7 +20,6 @@ export default function ProductHistory(props){
 
                     <Button
                         title="En savoir plus "
-                        color={page === "Article" ? 'green' : 'grey'}
                         onPress={() => navigate('Article')}
                     />
 

@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, View, SafeAreaView,TouchableOpacity, Image, Pressable, ScrollView } from 'react-native';
+
 import Home from './pages/Home';
 import Article from './pages/Login';
 import Header from './components/Header';
@@ -12,10 +13,7 @@ export default function App() {
   /* Ajout de variables avant le return */
   const items = [
 
-   // while fetch reponse {
-      // echo titre
-      //contenu
-      // etc}
+
     { id: 1,
       title: 'Canette soda test',
       contenu:"blabla" ,
@@ -57,7 +55,7 @@ export default function App() {
   }
 
 
-  async function getProductInfoFromApi (barCode) {
+  async function getProductInfoFromApi () {
     try {
       //this.setState({loading : true});
 
