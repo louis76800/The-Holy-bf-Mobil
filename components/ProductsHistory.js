@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ScrollView, View, Button} from 'react-native'
+import {ScrollView, View, Button, StyleSheet} from 'react-native'
 import ProductItem from './ProductItem';
 import Article from '../pages/Login';
 
@@ -18,11 +18,13 @@ export default function ProductHistory(props){
             <View >
                 <ProductItem data={el}/>
 
+                {/*  <View >
                     <Button
                         title="En savoir plus "
+                        color={"#678fc0"}
                         onPress={() => navigate('Article')}
                     />
-
+                </View>*/}
             </View>
           )
         })
@@ -31,3 +33,8 @@ export default function ProductHistory(props){
       </ScrollView>
     )
 }
+
+const styles = StyleSheet.create({
+
+
+});

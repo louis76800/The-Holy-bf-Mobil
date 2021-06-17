@@ -14,6 +14,7 @@ export default function Header({title}){
 
 const styles = StyleSheet.create({
     header: {
+        marginTop:25,
         height: 150,
         backgroundColor: '#678fc0' ,
         flexDirection:'row',

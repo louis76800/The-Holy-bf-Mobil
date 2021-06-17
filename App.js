@@ -11,44 +11,12 @@ export default function App() {
   const [page, navigate] = useState('Home');
 
   const [article, setArticle] = useState([]);
+
   useEffect(()=>{
     getProductInfoFromApi()
   },[])
   /* Ajout de variables avant le return */
-  const items = [
-
-
-    { id: 1,
-      title: 'Canette soda test',
-      contenu:"blabla" ,
-      date: 'Demain à 00:00'
-    },
-    { id: 2,
-      title: 'Canette soda test 2',
-      contenu:"blabla" ,
-      date: 'Demain à 00:00'
-    },
-    { id: 3,
-      title: 'Cookies du crous ',
-      contenu:"blabla" ,
-      date: 'Demain à 00:00'
-    },
-    { id: 4,
-      title: 'Pizza',
-      contenu:"blabla" ,
-      date: 'Demain à 00:00'
-    },
-    { id: 5,
-      title: 'Bière',
-      contenu:"blabla" ,
-      date: 'Demain à 00:00'
-    },
-    { id: 6,
-      title: 'Bière',
-      contenu:"blabla" ,
-      date: 'Demain à 00:00'
-    },
-  ]
+  const items = article;
 
 
 
@@ -67,12 +35,10 @@ export default function App() {
         'http://10.176.130.183:8080/apiv1/articles'
       );
       let responseJson = await response.json();
-      console.log(responseJson);
 
       // Travailler avec les données 
 
-      setArticle(responseJson);
-
+    let data =  setArticle(responseJson);
     } catch (error) {
       console.error(error);
     }
@@ -85,10 +51,10 @@ export default function App() {
         <StatusBar style="auto" />
         {/* Header */}
         <Header title={'The Holy BF'}/>
-      <View>
+      <View >
         <Button
             title="Blog"
-            color={page === "Home" ? "green" : 'grey'}
+            color={page === "Home" ? "orange" : 'grey'}
             onPress={() => navigate('Home')}
         />
       </View>
@@ -101,13 +67,13 @@ export default function App() {
 
 
 
-      <View style={styles.topMenu}>
-
+      <View >
+        {/*
         <Button
             title="En savoir plus "
             color={page === "Article" ? 'green' : 'grey'}
             onPress={() => navigate('Article')}
-        />
+        />*/}
       </View>
     </SafeAreaView>
   );
@@ -116,7 +82,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
   },
   topMenu: {
     width: '100%',
@@ -124,4 +90,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around'
   },
+
 });
