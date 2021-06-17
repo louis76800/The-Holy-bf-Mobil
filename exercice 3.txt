@@ -1,0 +1,111 @@
+//App.js
+
+import React from 'react';
+import { StyleSheet, Text, View, Button, ScrollView ,TouchableOpacity } from 'react-native';
+
+export default class App extends React.Component {
+    render() {
+        return (
+
+
+                    <View style={[styles.container]}>
+                        <Text style={[styles.titre,styles.fisrt_title]}>YOKI
+                        </Text>
+                         <View >
+                             <TouchableOpacity style={styles.bouton}>
+                                 <Text style={[styles.titre]}>SCANNER</Text>
+                         </TouchableOpacity>
+                        </View>
+
+                        <View style={{ width: '100%' }}>
+                            <Text style={styles.ligne}>
+                             </Text>
+                        </View>
+                        <ScrollView style={{ }}>
+                            <View style={{ }}>
+                                <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                                <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                            </View>
+                            <View style={{ }}>
+                                <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                                <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                            </View>
+                            <View style={{ }}>
+                                <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                                <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                            </View>
+                            <View style={{ }}>
+                                <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                                <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                            </View>
+                            <View style={{ }}>
+                                <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                                <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                            </View>
+                            <View style={{ }}>
+                                <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                                <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                            </View>
+                            <View style={{ }}>
+                                <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                                <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                            </View>
+                             <View style={{ }}>
+                                 <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                                 <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                            </View>
+                         </ScrollView>
+                </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        marginTop : 30,
+        textAlign :"center",
+        backgroundColor: '#F3F2F2',
+        alignItems: 'center',
+    },
+    bouton :{
+        marginTop: 25,
+        paddingTop: 9,
+        height: 80,
+        width: 300,
+        borderWidth:2,
+        color : "grey",
+        backgroundColor: "grey",
+        textAlign :"center",
+        alignItems: 'center',
+
+
+
+    },
+    fisrt_title :{
+        backgroundColor: 'grey',
+        borderBottomWidth: 1,
+        width : '100%',
+        textAlign :"center",
+        alignItems: 'center',
+        height :50,
+        paddingTop:12,
+        fontSize: 25,
+    },
+    TextInput :{
+
+    },
+    titre:{
+        fontWeight: "bold",
+        fontSize: 20,
+
+    },
+    ligne : {
+
+        borderBottomWidth :1,
+        marginBottom : 50,
+
+    },
+    red:{
+        backgroundColor:'red',
+    },
+});

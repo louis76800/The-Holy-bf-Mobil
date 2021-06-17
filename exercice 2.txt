@@ -1,0 +1,68 @@
+//App.js
+
+import React from 'react';
+import { StyleSheet, Text, Image, View } from 'react-native';
+
+export default class App extends React.Component {
+    render() {
+        return (
+
+            <View style={[styles.container]}>
+                <View style={{ flex: 0.07 }}>
+                </View>
+
+                <View>
+                    <Image
+                        style={styles.image}
+                        source={{
+                            uri: 'https://images.frandroid.com/wp-content/uploads/2020/03/fond-ecran-wallpaper-huawei-p40-header.jpg',
+                        }}
+                    />
+                </View>
+                <View style={{ flex: 0.06, width: '100%' }}>
+                    <Text style={styles.ligne}>
+                    </Text>
+                </View>
+                <View style={{ flex: 0.6 , width: '75%',alignItems: 'center'}}>
+
+
+                    <View style={{ flex: 0.5}}>
+                        <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                        <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                    </View>
+                    <View style={{ flex: 0.5}}>
+                        <Text style={[styles.ligne,styles.titre]}> Mon titre</Text>
+                        <Text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi asperiores dolores eos est, molestias nobis nostrum obcaecati odit quae. Ex fugit labore magni quam vitae? Ea id numquam vel? </Text>
+                    </View>
+                </View>
+            </View>
+
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        textAlign :"center",
+        backgroundColor: '#F3F2F2',
+        alignItems: 'center',
+    },
+    TextInput :{
+
+    },
+    titre:{
+        fontWeight: "bold",
+        fontSize: 20,
+    },
+    ligne : {
+
+        borderBottomWidth :1,
+        marginBottom : 50,
+
+    },
+    image: {
+        width: 350 ,
+        height: 350,
+    },
+});
